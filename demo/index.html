@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arr!psum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+        integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="pushable">
+    <div class="pusher">
+        <div class="ui inverted vertical masthead center aligned segment">
+            <div class="ui text container">
+                <h1 class="ui inverted header">
+                    Arr!psum
+                </h1>
+                <h2>For pirates, landlubbers and scurvy sufferers </h2>
+            </div>
+        </div>
+
+        <div class="ui maincontent container">
+            <div class="ui center aligned raised large form segment">
+
+                <div class="field">
+                    <h2 class="header">Generate Arr! Ipsum</h2>
+                </div>
+
+                <div class="three fields">
+                    <div class="field">
+                        <input id="inputCount" type="text" name="count" placeholder="100" value="100" />
+                    </div>
+                    <div class="field">
+                        <select id="inputMode" name="mode">
+                            <option value="letter">Letters</option>
+                            <option value="word" selected>Words</option>
+                            <option value="sentence">Sentences</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <button id="inputSubmit" class="ui fluid submit large blue button">Update</button>
+                    </div>
+                </div>
+                <div class="left aligned field">
+                    <div class="ui checkbox">
+                        <input id="inputQuotes" type="checkbox" name="inputQuotes" checked>
+                        <label>use pirate quotes</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <textarea id="outputText" name="text" placeholder="Enter text here"></textarea>
+                </div>
+
+                <div class="ui text container">
+                    <button class="ui huge blue button" id="outputTextCopy">Copy to Clipboard</button>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="ui footer container">
+            <div class="ui raised center aligned segment">
+                <a href="imprint.html" target="_blank">Imprint</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+    <script src="../src/arrIpsum.min.js"></script>
+    <script src="page.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            pageJs.init();
+        });
+    </script>
+</body>
+
+</html>
