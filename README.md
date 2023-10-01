@@ -10,6 +10,9 @@ var ipsumText = arrIpsum.getIpsum(
 );
 ```
 
+## Demo
+[https://ipsum.wasmitleder.de/demo/](https://ipsum.wasmitleder.de/demo/)
+
 ### Example
 ```html
 <!doctype html>
