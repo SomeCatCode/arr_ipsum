@@ -14,15 +14,20 @@ var pageJs = {
             .on('click', pageJs.config.idInputSubmit, pageJs.clickGenerate)
             .on('click', pageJs.config.idCopy, pageJs.copyToClipboard);
         $(pageJs.config.idInputQuotes).parent().checkbox();
-        $(pageJs.config.idInputSubmit).dropdown();
+        $(pageJs.config.idInputMode).dropdown();
         $(pageJs.config.idInputSubmit).click();
     },
     clickGenerate: function (e) {
         e.preventDefault();
-        let response = arrIpsum.getIpsum(
-            $(pageJs.config.idInputMode).val(),
-            $(pageJs.config.idInputCount).val(),
-            $(pageJs.config.idInputQuotes).parent().checkbox('is checked'));
+        let response;
+        try {
+            response = arrIpsum.getIpsum(
+                $(pageJs.config.idInputMode).val(),
+                $(pageJs.config.idInputCount).val(),
+                $(pageJs.config.idInputQuotes).parent().checkbox('is checked'));
+        } catch (error) {
+            response = error.message;
+        }
         $(pageJs.config.idOutput).val(response);
     },
     copyToClipboard: function (element) {
