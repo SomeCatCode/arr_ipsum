@@ -4,8 +4,9 @@ var arrIpsum = {
     },
     getIpsum: function (mode, count, quotes) {
         // count must be greater than 0
-        if (count < 0) {
-            throw new Error('Count must be greater than 0');
+        count = Number(count);
+        if (!Number.isInteger(count) || count < 1) {
+            throw new Error('Count must be an integer greater than 0');
         }
         // definitions
         var getArr = true;
@@ -30,14 +31,19 @@ var arrIpsum = {
             return text.split(' ').length;
         }
         // sentence
-        return text.split(/\.|\!|\?/).length;
+        return arrIpsum.getSentences(text).length;
+    },
+    getSentences: function (text) {
+        return (text.match(/[^.!?]+(?:[.!?]+|$)/g) || []).filter(function (sentence) {
+            return sentence.trim() !== '';
+        });
     },
     cutOverhang: function (mode, text, count) {
         if (mode == "letter") // letter
             return text.substring(0, count);
         if (mode == "word")  // mode
             return text.split(' ').slice(0, count).join(' ');
-        return text; // sentence
+        return arrIpsum.getSentences(text).slice(0, count).join('').trim(); // sentence
     },
     getRandomArr: function () {
         let arr = ["Arr!", "Ahoi!", "Argh!", "Arrgh!", "Yarr!", "Harr!", "Urr!", "Aye!", "Yo-Ho!"];
