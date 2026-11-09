@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /demo/contact.html
-Disallow: /contact.html

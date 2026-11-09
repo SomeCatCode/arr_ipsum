@@ -11,7 +11,7 @@ var ipsumText = arrIpsum.getIpsum(
 ```
 
 ## Demo
-[https://ipsum.wasmitleder.de/demo/](https://ipsum.wasmitleder.de/demo/)
+[https://somecatcode.github.io/arr_ipsum/demo/](https://somecatcode.github.io/arr_ipsum/demo/)
 
 ### Example
 ```html
