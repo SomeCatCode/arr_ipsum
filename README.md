@@ -4,9 +4,9 @@ Just a fun projekt. A little lorem-ipsum-like generator with pirate quotes.
 ## Usage
 ```js
 var ipsumText = arrIpsum.getIpsum(
-    100,    // Count of letters/words/sentences
     'word', // Generation Mode use ( letter || word || sentence )
-     true   // Use pirate quotes 
+    100,    // Count of letters/words/sentences
+    true    // Use pirate quotes 
 );
 ```
 
@@ -26,7 +26,7 @@ var ipsumText = arrIpsum.getIpsum(
     <div id="content"></div>
     <script type="text/javascript">
       jQuery(function($) {
-        let ipsumText = arrIpsum.getIpsum(100, 'word', true);
+        let ipsumText = arrIpsum.getIpsum('word', 100, true);
         $('#content').text(ipsumText);
       });
     </script>
